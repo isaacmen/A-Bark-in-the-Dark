@@ -1,4 +1,4 @@
 sceneSetups:
-- path: C:/Users/Tim/Desktop/Kat/ICS162/Homework5/ics162_hw5/Assets/_Scenes/main.unity
+- path: Assets/Scenes/katherine's teststuff.unity
   isLoaded: 1
   isActive: 1

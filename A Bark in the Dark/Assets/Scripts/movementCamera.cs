@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class movementCamera : MonoBehaviour {
 
-    public GameObject positionref_up;
+    public GameObject positionref_cam;
     public float speed = 1.0f;
 
 	// Use this for initialization
@@ -14,7 +14,7 @@ public class movementCamera : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector3 pos = transform.position; // position of camera (this)
-        Vector3 campos = positionref_up.transform.position;
+        Vector3 campos = positionref_cam.transform.position;
 
         transform.position = new Vector3(campos.x, campos.y, pos.z);
 	}

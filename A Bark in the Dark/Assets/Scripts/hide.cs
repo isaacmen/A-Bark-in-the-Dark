@@ -12,6 +12,10 @@ public class hide : MonoBehaviour {
 		
 	}
 
+    public bool isHidden() {
+        return hidden;
+    }
+
     void OnTriggerEnter(Collider other) 
     {
         if (other.CompareTag("hideyhole")) 
