@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class monster : MonoBehaviour {
 
-    int move = 50;
-    float speed = 2.5f;
+    int move = 20;
+    float speed = 3.0f;
     Vector3 initialPos;
 
-    bool hunting = true;
+    //bool hunting = true;
     bool stop = false;
 
 	// Use this for initialization
@@ -44,11 +44,17 @@ public class monster : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         Vector3 pos = transform.position;
+        GameObject player = GameObject.Find("Player");
+        var playerPos = player.transform.position;
         
-
-        if (pos.y <= initialPos.y + move && !stop)
+        if (!stop) 
         {
-            transform.position = new Vector3(pos.x, pos.y + (speed * Time.deltaTime), pos.z);
+            float diff = Mathf.Abs(playerPos.y - pos.y);
+            if (diff <= move) // pos.y <= initialPos.y + move
+            {
+                transform.position = new Vector3(pos.x, pos.y + (speed * Time.deltaTime), pos.z);
+            }
+            else { Destroy(gameObject); }
         }
 	}
 }

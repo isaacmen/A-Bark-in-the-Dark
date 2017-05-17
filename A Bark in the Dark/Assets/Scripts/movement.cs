@@ -5,7 +5,7 @@ using UnityEngine;
 public class movement : MonoBehaviour {
 
     public bool can_move = true;
-    public float speed = 0.04f;
+    public float speed = 0.035f;
 
 	// Use this for initialization
 	void Start () {
