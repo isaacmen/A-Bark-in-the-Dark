@@ -11,13 +11,13 @@ public class FlashlightMove : MonoBehaviour {
 
 		if (right) 
 		{
-			Vector3 move = new Vector3 (0.0f, 0.0f, -1.0f);
+			Vector3 move = new Vector3 (0.0f, 0.0f, -2.0f);
 			transform.Rotate (move);
 		}
 
 		if (left) 
 		{
-			Vector3 move = new Vector3 (0.0f, 0.0f, 1.0f);
+			Vector3 move = new Vector3 (0.0f, 0.0f, 2.0f);
 			transform.Rotate (move);
 		}
 
