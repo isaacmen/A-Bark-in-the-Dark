@@ -9,7 +9,7 @@ public class CameraMover : MonoBehaviour {
 
 		void Start()
 		{ 
-			DontDestroyOnLoad (transform.gameObject);
+			
 		}
 
 		void Update () 

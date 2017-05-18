@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class monster : MonoBehaviour {
 
-    int move = 20;
-    float speed = 3.0f;
+    int move = 10;
+    float speed = 2.0f; // 3
     Vector3 initialPos;
 
     //bool hunting = true;
-    bool stop = false;
+    public bool stop = false;
 
 	// Use this for initialization
 	void Start () {
@@ -49,6 +49,7 @@ public class monster : MonoBehaviour {
         
         if (!stop) 
         {
+            //Debug.Log("stopped");
             float diff = Mathf.Abs(playerPos.y - pos.y);
             if (diff <= move) // pos.y <= initialPos.y + move
             {

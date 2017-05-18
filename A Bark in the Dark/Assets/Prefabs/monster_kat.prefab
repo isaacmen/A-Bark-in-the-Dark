@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 114986772515212654}
   - component: {fileID: 65582274906081764}
   - component: {fileID: 82953357018708056}
+  - component: {fileID: 114440013583060822}
   m_Layer: 0
   m_Name: monster_kat
   m_TagString: Untagged
@@ -37,8 +38,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1621932290915022}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0, y: -13.1, z: 0}
-  m_LocalScale: {x: 4, y: 2, z: 1}
+  m_LocalPosition: {x: -7.0095406, y: 8.953529, z: -1}
+  m_LocalScale: {x: 6, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -53,8 +54,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.51791495, y: 0.5495436, z: 0.2}
-  m_Center: {x: 0.0014533699, y: -0.014533758, z: 0}
+  m_Size: {x: 0.29889384, y: 0.5495436, z: 0.2}
+  m_Center: {x: 0.0026309788, y: -0.014533758, z: 0}
 --- !u!82 &82953357018708056
 AudioSource:
   m_ObjectHideFlags: 1
@@ -64,9 +65,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 14e44c64d4342c54db75a72bc7982496, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c3a25d15f31a7ba428f23b23c2599989, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.8
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -75,9 +76,9 @@ AudioSource:
   Priority: 128
   DopplerLevel: 0
   MinDistance: 1
-  MaxDistance: 15.345118
+  MaxDistance: 6.570808
   Pan2D: 0
-  rolloffMode: 1
+  rolloffMode: 2
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -85,28 +86,34 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 2
-      time: 0
-      value: 1.0083351
-      inSlope: -5.0019917
-      outSlope: -5.0019917
+      time: 0.06516731
+      value: 1
+      inSlope: -15.351254
+      outSlope: -15.351254
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.23708192
-      value: 0.2416687
-      inSlope: -1.2504979
-      outSlope: -1.2504979
+      time: 0.13033462
+      value: 0.5
+      inSlope: -3.8378136
+      outSlope: -3.8378136
       tangentMode: 0
     - serializedVersion: 2
-      time: 0.5865143
+      time: 0.26066923
+      value: 0.25
+      inSlope: -0.9594534
+      outSlope: -0.9594534
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 0.52133846
+      value: 0.125
+      inSlope: -0.23986335
+      outSlope: -0.23986335
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
       value: 0
-      inSlope: -0.31262448
-      outSlope: -0.31262448
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 0.8707886
-      value: 0
-      inSlope: -0.20007975
-      outSlope: -0.20007975
+      inSlope: -0.065193325
+      outSlope: -0.065193325
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
@@ -147,6 +154,17 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 0
+--- !u!114 &114440013583060822
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1621932290915022}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031cb8c5f6a1c5442bb6eddf16b2d0d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114986772515212654
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -158,6 +176,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 87eae9302af63684dacfba4c68bb79a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  stop: 0
 --- !u!212 &212518075350506362
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -189,7 +208,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 35db6924aa517074c9feaf766910400b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -11,7 +11,7 @@ public class monsterSpawner : MonoBehaviour {
     //int spawnRate = 5; // in percent
 
     float timer = 0;
-    float next_time = 800;
+    float next_time = 0;
 
     private GameObject currentMonster;
 
@@ -19,7 +19,7 @@ public class monsterSpawner : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         var playerPos = player.transform.position;
-        transform.position = new Vector3(playerPos.x, playerPos.y - 15, playerPos.z);
+        transform.position = new Vector3(playerPos.x, playerPos.y - 9, playerPos.z);
 	}
 	
 	// Update is called once per frame
@@ -28,13 +28,13 @@ public class monsterSpawner : MonoBehaviour {
         // keep spawner behind and certain distance from player
         var pos = transform.position;
         var playerPos = player.transform.position;
-        transform.position = new Vector3(pos.x, playerPos.y - 15, pos.z);
+        transform.position = new Vector3(pos.x, playerPos.y - 9, pos.z);
 
         // random chance monster will spawn
         if (can_spawn && timer >= next_time && currentMonster == null)
         {
             Debug.Log("ping: " + next_time);
-            float r = Random.Range(800.0f, 1200.0f);
+            float r = Random.Range(200.0f, 400.0f);
             //if (r < spawnRate)
             //{
             currentMonster = Instantiate(monster_prefab, pos, transform.rotation);
