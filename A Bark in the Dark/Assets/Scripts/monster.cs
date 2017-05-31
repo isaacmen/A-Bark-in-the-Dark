@@ -20,7 +20,6 @@ public class monster : MonoBehaviour {
 
     void OnTriggerEnter(Collider other) 
     {
-
         if (other.CompareTag("hider"))
         {
             var hscript = other.GetComponent<hide>();
@@ -42,7 +41,6 @@ public class monster : MonoBehaviour {
             }
 
         }
-
     }
 	
 	// Update is called once per frame
