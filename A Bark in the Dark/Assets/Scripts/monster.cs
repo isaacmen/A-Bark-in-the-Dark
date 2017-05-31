@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class monster : MonoBehaviour {
 
-    int move = 10;
+    int move = 10; // how far monster goes before disappearing
     float speed = 2.0f; // 3
     Vector3 initialPos;
 
     //bool hunting = true;
     public bool stop = false;
+    bool passover = false;
+    public string direction = "up";
 
 	// Use this for initialization
 	void Start () {
@@ -34,8 +36,8 @@ public class monster : MonoBehaviour {
             }
             else 
             {
-                Debug.Log("monster: passing over...");
-                
+                //Debug.Log("monster: passing over...");
+                passover = true;
             }
 
         }
@@ -49,13 +51,43 @@ public class monster : MonoBehaviour {
         
         if (!stop) 
         {
-            //Debug.Log("stopped");
+
+
             float diff = Mathf.Abs(playerPos.y - pos.y);
-            if (diff <= move) // pos.y <= initialPos.y + move
+            float diff2 = Mathf.Abs(playerPos.x - pos.x);
+            if (diff >= move || diff2 >= move) { Destroy(gameObject); }
+            else
             {
-                transform.position = new Vector3(pos.x, pos.y + (speed * Time.deltaTime), pos.z);
+                if (direction == "up")
+                {
+                    transform.position = new Vector3(pos.x, pos.y + (speed * Time.deltaTime), pos.z);
+                }
+                else if (direction == "down")
+                {
+                    transform.position = new Vector3(pos.x, pos.y - (speed * Time.deltaTime), pos.z);
+                }
+                else if (direction == "left")
+                {
+                    transform.position = new Vector3(pos.x + (speed * Time.deltaTime), pos.y, pos.z);
+                }
+                else if (direction == "right")
+                {
+                    transform.position = new Vector3(pos.x - (speed * Time.deltaTime), pos.y, pos.z);
+                }
+            } 
+
+            /*
+            if (passover)
+            {
+                float diff2 = Mathf.Abs(playerPos.y - pos.y);
+                if (diff2 <= move) // pos.y <= initialPos.y + move
+                {
+                    transform.position = new Vector3(pos.x, pos.y + (speed * Time.deltaTime), pos.z);
+                }
+                else { Destroy(gameObject); }
             }
-            else { Destroy(gameObject); }
+             */
         }
+        
 	}
 }
