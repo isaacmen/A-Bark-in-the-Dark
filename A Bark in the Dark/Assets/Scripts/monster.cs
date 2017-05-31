@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class monster : MonoBehaviour {
 
@@ -30,9 +31,12 @@ public class monster : MonoBehaviour {
                 // insert player dies here
                 GameObject player = GameObject.Find("Player");
                 var pscript = player.GetComponent<movement>();
+                
                 pscript.can_move = false;
-
                 stop = true; // monster stops
+
+                // death screen
+                SceneManager.LoadScene("DeathScene");
             }
             else 
             {
@@ -51,7 +55,6 @@ public class monster : MonoBehaviour {
         
         if (!stop) 
         {
-
 
             float diff = Mathf.Abs(playerPos.y - pos.y);
             float diff2 = Mathf.Abs(playerPos.x - pos.x);
